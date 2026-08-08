@@ -8,4 +8,8 @@ docx2txt==0.8
 python-docx==0.8.11
 scikit-learn==1.3.2
 numpy==1.24.3
+<<<<<<< HEAD
 Werkzeug==3.0.0
+=======
+Werkzeug==3.0.0
+>>>>>>> d3347c210042cc3d3799e39752caf855d05b92a4

@@ -11,6 +11,7 @@ __pycache__/
 *.so
 .Python
 build/
+<<<<<<< HEAD
 develop-eggs/
 dist/
 downloads/
@@ -25,6 +26,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+=======
+dist/
+*.egg-info/
+>>>>>>> d3347c210042cc3d3799e39752caf855d05b92a4
 
 # Flask
 instance/
@@ -42,14 +47,18 @@ instance/
 *.swo
 *~
 .DS_Store
+<<<<<<< HEAD
 .project
 .pydevproject
 .settings/
+=======
+>>>>>>> d3347c210042cc3d3799e39752caf855d05b92a4
 
 # Uploads
 uploads/*
 !uploads/.gitkeep
 
+<<<<<<< HEAD
 # Testing
 .pytest_cache/
 .coverage
@@ -63,12 +72,23 @@ logs/
 .env
 .env.local
 .env.*.local
+=======
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+>>>>>>> d3347c210042cc3d3799e39752caf855d05b92a4
 
 # OS
 Thumbs.db
 .DS_Store
+<<<<<<< HEAD
 
 # Temporary files
 *.tmp
 temp/
 tmp/
+=======
+>>>>>>> d3347c210042cc3d3799e39752caf855d05b92a4
