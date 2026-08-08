@@ -1,0 +1,95 @@
+JOB OPENING: Senior Full-Stack Engineer
+
+COMPANY: Tech Innovation Corp
+LOCATION: San Francisco, CA (Remote Available)
+SALARY RANGE: $150,000 - $200,000
+EXPERIENCE REQUIRED: 5-7 years
+
+POSITION OVERVIEW
+We are seeking a Senior Full-Stack Engineer to join our rapidly growing engineering team. 
+The ideal candidate will have strong expertise in both backend and frontend development, 
+with a proven track record of building scalable, high-performance applications. This role 
+offers the opportunity to lead technical initiatives, mentor junior developers, and shape 
+the future of our platform.
+
+PRIMARY RESPONSIBILITIES
+• Design and develop scalable backend services using modern web frameworks
+• Build responsive and interactive user interfaces with modern frontend frameworks
+• Architect and implement microservices-based systems
+• Optimize database queries and application performance
+• Implement security best practices and code reviews
+• Mentor junior developers and lead technical discussions
+• Collaborate with product team to understand requirements and constraints
+• Deploy and monitor applications on cloud infrastructure
+• Participate in on-call rotation for production support
+
+REQUIRED TECHNICAL SKILLS
+• Proficiency in at least one backend language: Python, Java, Node.js, Go, or Rust
+• Strong expertise in frontend frameworks: React, Angular, or Vue.js
+• Deep knowledge of databases: PostgreSQL, MongoDB, or similar
+• Experience with containerization: Docker, Kubernetes
+• CI/CD and DevOps experience with Jenkins, GitLab CI, or similar tools
+• Cloud platform experience: AWS, Azure, or Google Cloud Platform
+• RESTful API design and GraphQL (preferred)
+• SQL and database optimization skills
+• Git version control proficiency
+
+REQUIRED SOFT SKILLS
+• Strong problem-solving abilities
+• Excellent communication and collaboration skills
+• Leadership and mentoring experience
+• Project management and agile methodologies
+• Attention to detail and code quality
+• Time management and ability to prioritize tasks
+• Willingness to learn new technologies
+
+NICE-TO-HAVE QUALIFICATIONS
+• Machine Learning or AI/ML experience
+• Message queue systems: RabbitMQ, Kafka, Redis
+• Elasticsearch or similar search technologies
+• Mobile development experience (React Native, Flutter)
+• Experience with serverless architectures (AWS Lambda, Google Cloud Functions)
+• Open source contributions
+• Published technical articles or conference talks
+• AWS or cloud certifications
+
+ABOUT US
+Tech Innovation Corp is a leading SaaS company in the data analytics space, 
+serving Fortune 500 companies. We're backed by top-tier venture capital and 
+are experiencing rapid growth.
+
+BENEFITS
+• Competitive salary and equity
+• Comprehensive health insurance
+• 401(k) matching
+• Flexible work from home policy
+• Professional development budget
+• Conference attendance support
+• Unlimited PTO
+• Collaborative team environment
+
+WHAT WE LOOK FOR
+We value engineers who:
+• Take ownership of their work
+• Care deeply about code quality
+• Continuously learn and adapt
+• Collaborate effectively with teammates
+• Have strong communication skills
+• Can think strategically about architecture
+• Are passionate about solving hard problems
+
+APPLICATION REQUIREMENTS
+• Resume/CV
+• GitHub profile or portfolio links
+• Cover letter (optional but appreciated)
+• References from previous managers
+
+HOW TO APPLY
+Submit your application including resume, portfolio, and any relevant links to careers@techinnovation.com
+
+---
+
+SALARY DETAILS: $150,000 - $200,000 based on experience
+JOB TYPE: Full-time
+POSTING DATE: 2024
+APPLICATION DEADLINE: Open until filled

@@ -1,0 +1,74 @@
+SARAH JOHNSON
+sarah.johnson@email.com | (555) 987-6543 | github.com/sarahjohnson
+
+OBJECTIVE
+Dedicated Data Scientist with 5 years of experience in machine learning and data analysis. 
+Seeking to leverage expertise in building predictive models and data pipelines to drive 
+business insights and innovation.
+
+CORE COMPETENCIES
+Machine Learning: Deep Learning, NLP, Computer Vision, Classification, Regression
+Programming: Python, R, SQL, Scala
+Data Tools: TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, Matplotlib
+Big Data: Apache Spark, Hadoop
+Cloud Platforms: AWS (SageMaker, EC2, S3), Azure
+Databases: PostgreSQL, MongoDB, Redis, Cassandra
+Version Control: Git, GitHub, GitLab
+
+PROFESSIONAL EXPERIENCE
+
+Senior Data Scientist | Analytics Pro Inc | Mar 2021 - Present
+• Developed machine learning models achieving 95% accuracy on customer churn prediction
+• Built data pipelines processing 100GB+ daily data using Apache Spark and Python
+• Led team of 3 data scientists on NLP project for sentiment analysis
+• Implemented recommendation engine increasing user engagement by 35%
+• Tech Stack: Python, TensorFlow, PySpark, AWS SageMaker, PostgreSQL
+
+Data Scientist | Data Insights Co | Jul 2019 - Feb 2021
+• Created predictive models using deep learning and classical ML techniques
+• Designed and implemented ETL pipelines using Python and SQL
+• Conducted exploratory data analysis on datasets with 10M+ records
+• Collaborated with cross-functional teams to define metrics and KPIs
+• Tech Stack: Python, Scikit-learn, R, SQL, Azure ML
+
+Machine Learning Engineer | Tech Startup | Jan 2019 - Jun 2019
+• Deployed ML models to production using Docker and Kubernetes
+• Optimized neural network architectures reducing inference time by 50%
+• Built monitoring dashboards for model performance tracking
+• Tech Stack: Python, PyTorch, Docker, TensorFlow
+
+Data Analyst | Finance Corp | Aug 2018 - Dec 2018
+• Performed statistical analysis on financial data using Python and R
+• Created interactive dashboards using Tableau and Power BI
+• Identified trends and patterns impacting business decisions
+• Tech Stack: Python, R, SQL, Tableau
+
+EDUCATION
+M.S. Data Science | Tech University | 2018
+GPA: 3.8/4.0 | Thesis: "Deep Learning for Time Series Forecasting"
+
+B.S. Statistics | State College | 2016
+GPA: 3.7/4.0
+
+CERTIFICATIONS & AWARDS
+• AWS Certified Machine Learning - Specialty (2023)
+• Google Cloud Professional Data Engineer (2022)
+• Best Research Paper Award - Data Science Conference 2022
+
+PUBLICATIONS
+• "Improving NLP Model Performance on Domain-Specific Text" - AI Journal 2023
+• Keynote Speaker - Data Science Summit 2022
+
+PROJECTS
+• Customer Segmentation: Built clustering model identifying 8 customer segments
+• Fraud Detection: Developed system detecting fraudulent transactions with 98% precision
+• Demand Forecasting: Implemented time series model for inventory optimization
+
+TECHNICAL PROFICIENCY LEVELS
+Expert: Python, Machine Learning, Deep Learning, SQL, Data Analysis
+Advanced: R, Apache Spark, TensorFlow, Cloud Platforms
+Intermediate: Scala, Docker, Kubernetes, CI/CD
+
+LANGUAGES
+English (Native)
+Mandarin Chinese (Intermediate)

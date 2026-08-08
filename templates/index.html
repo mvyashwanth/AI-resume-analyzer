@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Resume Analyzer — AI-Powered Candidate Screening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Resume<strong>AI</strong></span>
+                </div>
+                <h1>HR Resume Analyzer</h1>
+                <p class="tagline">Enterprise-grade AI candidate screening with real-time voice narration</p>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <div class="main-container">
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Job Openings</h3>
+                    <div id="jobList" class="job-list">
+                        <div class="empty-state">No jobs created yet</div>
+                    </div>
+                    <button id="newJobBtn" class="btn btn-primary btn-block">+ New Job Opening</button>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+
+                <!-- VIEW: NEW JOB CREATION -->
+                <section id="newJobView" class="view">
+                    <h2>Create Job Opening</h2>
+                    <form id="jobForm" class="form-section">
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title *</label>
+                            <input type="text" id="jobTitle" name="job_title" placeholder="e.g., Senior Software Engineer" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="company_name" placeholder="e.g., Acme Corp">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="requiredExp">Years of Experience Required</label>
+                            <input type="number" id="requiredExp" name="required_experience" min="0" placeholder="e.g., 5">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobDescription">Job Description / Requirements *</label>
+                            <textarea id="jobDescription" name="description" rows="10" 
+                                placeholder="Paste the complete job description, key responsibilities, and required skills..." required></textarea>
+                            <small>Include technical skills, soft skills, and experience requirements</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Create Job Opening</button>
+                            <button type="button" id="cancelJobBtn" class="btn btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- VIEW: JOB DASHBOARD (Candidate List) -->
+                <section id="jobDashboardView" class="view hidden">
+                    <div class="dashboard-header">
+                        <div>
+                            <h2 id="currentJobTitle">Loading...</h2>
+                            <p id="currentCompanyName" class="company-name"></p>
+                        </div>
+                        <div class="header-stats">
+                            <div class="stat">
+                                <span class="stat-number" id="totalCandidates">0</span>
+                                <span class="stat-label">Total Candidates</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="excellentCount">0</span>
+                                <span class="stat-label">Excellent Matches</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" id="goodCount">0</span>
+                                <span class="stat-label">Good Matches</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upload-section">
+                        <h3>Upload Resumes</h3>
+                        <div class="dropzone" id="dropzone">
+                            <div class="dropzone-content">
+                                <p class="dropzone-text">📁 Drag & drop resume files here or click to select</p>
+                                <p class="dropzone-subtext">Supports PDF, DOCX, and TXT formats</p>
+                                <input type="file" id="resumeFileInput" multiple accept=".pdf,.docx,.txt" style="display: none;">
+                            </div>
+                        </div>
+                        <button id="uploadBtn" class="btn btn-primary" style="display: none;">Upload & Analyze</button>
+                        <div id="uploadProgress" class="progress-container" style="display: none;">
+                            <p id="uploadStatus">Processing...</p>
+                            <div class="progress-bar">
+                                <div id="progressFill" class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="candidatesSection" class="candidates-section" style="display: none;">
+                        <h3>Candidates Ranked by Fit</h3>
+                        <div id="candidateList" class="candidate-list">
+                            <!-- Candidates will be inserted here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- VIEW: CANDIDATE DETAIL -->
+                <section id="candidateDetailView" class="view hidden">
+                    <button id="backToDashboardBtn" class="btn btn-secondary">&larr; Back to Dashboard</button>
+
+                    <div class="candidate-detail-header">
+                        <div class="candidate-avatar">
+                            <span id="candidateInitials"></span>
+                        </div>
+                        <div>
+                            <h2 id="detailName">Loading...</h2>
+                            <p id="detailEmail" class="candidate-contact"></p>
+                            <p id="detailPhone" class="candidate-contact"></p>
+                        </div>
+                        <div class="detail-score">
+                            <div class="score-circle">
+                                <span id="detailScore">0</span><span class="pct">%</span>
+                            </div>
+                            <p id="detailSuitability" class="suitability-label"></p>
+                        </div>
+                    </div>
+
+                    <div class="voice-section">
+                        <h3>📢 AI Summary (Voice Narration)</h3>
+                        <div class="voice-controls">
+                            <button id="playSummaryBtn" class="btn btn-voice">
+                                <span class="btn-icon">🔊</span> Play Summary
+                            </button>
+                            <button id="stopSummaryBtn" class="btn btn-secondary" disabled>
+                                <span class="btn-icon">⏹</span> Stop
+                            </button>
+                            <button id="downloadSummaryBtn" class="btn btn-secondary">
+                                <span class="btn-icon">💾</span> Download
+                            </button>
+                        </div>
+                        <div id="voiceIndicator" class="voice-indicator hidden">
+                            <span class="pulse"></span><span class="pulse"></span><span class="pulse"></span>
+                            Speaking...
+                        </div>
+                    </div>
+
+                    <div class="summary-box">
+                        <h3>Analysis Summary</h3>
+                        <p id="detailSummary"></p>
+                    </div>
+
+                    <div class="skills-section">
+                        <div class="skills-column">
+                            <h3>✅ Matched Skills</h3>
+                            <div id="detailMatchedSkills" class="skills-chips"></div>
+                        </div>
+                        <div class="skills-column">
+                            <h3>⚠️ Missing Skills</h3>
+                            <div id="detailMissingSkills" class="skills-chips"></div>
+                        </div>
+                    </div>
+
+                    <div class="all-skills-section">
+                        <h3>🌟 All Skills Detected</h3>
+                        <div id="detailAllSkills" class="skills-chips"></div>
+                    </div>
+
+                    <div class="highlights-section">
+                        <h3>🎯 Top Talents & Highlights</h3>
+                        <div id="detailHighlights" class="highlights-list"></div>
+                    </div>
+
+                    <div class="scoring-breakdown">
+                        <h3>Scoring Breakdown</h3>
+                        <div class="score-bars">
+                            <div class="score-bar">
+                                <label>Text Similarity Match</label>
+                                <div class="bar">
+                                    <div id="similarityBar" class="bar-fill"></div>
+                                </div>
+                                <span id="similarityValue">0%</span>
+                            </div>
+                            <div class="score-bar">
+                                <label>Skill Match Score</label>
+                                <div class="bar">
+                                    <div id="skillBar" class="bar-fill"></div>
+                                </div>
+                                <span id="skillValue">0%</span>
+                            </div>
+                            <div class="score-bar">
+                                <label>Experience Match</label>
+                                <div class="bar">
+                                    <div id="experienceBar" class="bar-fill"></div>
+                                </div>
+                                <span id="experienceValue">0%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="status-section">
+                        <h3>Candidate Status</h3>
+                        <div class="status-buttons">
+                            <button class="status-btn" data-status="shortlisted">⭐ Shortlist</button>
+                            <button class="status-btn" data-status="reviewed">✓ Reviewed</button>
+                            <button class="status-btn" data-status="rejected">✗ Reject</button>
+                        </div>
+                        <p id="statusMessage" class="status-message"></p>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>🔒 All processing happens locally. No resume data is stored on external servers.</p>
+            <p>Voice narration powered by Web Speech API. AI analysis uses TF-IDF, skill matching, and experience scoring.</p>
+        </footer>
+    </div>
+
+    <!-- Hidden audio element for voice playback -->
+    <audio id="summaryAudio"></audio>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

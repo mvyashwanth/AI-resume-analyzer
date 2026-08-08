@@ -1,0 +1,968 @@
+/* ========================================================================
+   HR Resume Analyzer - Professional CSS
+   ======================================================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --success: #16a34a;
+    --warning: #ea580c;
+    --danger: #dc2626;
+    --info: #0891b2;
+    
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-light: #94a3b8;
+    
+    --border: #e2e8f0;
+    --border-dark: #cbd5e1;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    --radius: 8px;
+    --radius-lg: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* ========================================================================
+   HEADER
+   ======================================================================== */
+.header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.logo-text {
+    font-weight: 600;
+}
+
+.logo-text strong {
+    font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    opacity: 0.95;
+    font-size: 0.95rem;
+}
+
+/* ========================================================================
+   MAIN LAYOUT
+   ======================================================================== */
+.main-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: calc(100vh - 200px);
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    background: var(--bg-primary);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.sidebar-section h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.job-item {
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.job-item:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--primary);
+}
+
+.job-item.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.job-item-title {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.job-item-count {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.main-content {
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* ========================================================================
+   VIEWS
+   ======================================================================== */
+.view {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.view.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================================================
+   FORMS & BUTTONS
+   ======================================================================== */
+.form-section {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+}
+
+.btn-voice {
+    background: linear-gradient(135deg, var(--success), #10b981);
+    color: white;
+    padding: 0.75rem 1.25rem;
+}
+
+.btn-voice:hover {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+.btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========================================================================
+   DROPZONE
+   ======================================================================== */
+.dropzone {
+    border: 2px dashed var(--border-dark);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.dropzone-text {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.dropzone-subtext {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ========================================================================
+   PROGRESS
+   ======================================================================== */
+.progress-container {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--info));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#uploadStatus {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ========================================================================
+   DASHBOARD HEADER
+   ======================================================================== */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-header h2 {
+    margin-bottom: 0.5rem;
+}
+
+.company-name {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.header-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+/* ========================================================================
+   UPLOAD SECTION
+   ======================================================================== */
+.upload-section {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.upload-section h3 {
+    margin-bottom: 1rem;
+}
+
+/* ========================================================================
+   CANDIDATE LIST
+   ======================================================================== */
+.candidates-section {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.candidates-section h3 {
+    margin-bottom: 1rem;
+}
+
+.candidate-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.candidate-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.candidate-card:hover {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.02);
+    box-shadow: var(--shadow-md);
+}
+
+.candidate-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--info));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.candidate-info {
+    flex: 1;
+}
+
+.candidate-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.candidate-email {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.candidate-score {
+    text-align: center;
+    min-width: 80px;
+}
+
+.score-badge {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.25rem;
+}
+
+.score-badge.excellent {
+    background: linear-gradient(135deg, var(--success), #10b981);
+}
+
+.score-badge.good {
+    background: linear-gradient(135deg, var(--info), #06b6d4);
+}
+
+.score-badge.fair {
+    background: linear-gradient(135deg, var(--warning), #f97316);
+}
+
+.score-badge.poor {
+    background: linear-gradient(135deg, var(--danger), #ef4444);
+}
+
+.score-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* ========================================================================
+   CANDIDATE DETAIL
+   ======================================================================== */
+.candidate-detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.candidate-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.candidate-detail-header > div:nth-child(2) {
+    flex: 1;
+}
+
+#detailName {
+    margin-bottom: 0.5rem;
+}
+
+.candidate-contact {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.detail-score {
+    text-align: center;
+}
+
+.score-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--info));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    box-shadow: var(--shadow-lg);
+}
+
+.score-circle .pct {
+    font-size: 1.2rem;
+    margin-left: 0.25rem;
+}
+
+.suitability-label {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ========================================================================
+   VOICE SECTION
+   ======================================================================== */
+.voice-section {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+.voice-section h3 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.voice-controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn-voice {
+    flex: 1;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.voice-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--success);
+    font-weight: 600;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.voice-indicator.hidden {
+    display: none;
+}
+
+.pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+}
+
+.pulse:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.pulse:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pulse:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* ========================================================================
+   SUMMARY BOX
+   ======================================================================== */
+.summary-box {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.summary-box h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.summary-box p {
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+/* ========================================================================
+   SKILLS SECTION
+   ======================================================================== */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.skills-column {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.skills-column h3 {
+    margin-bottom: 1rem;
+}
+
+.skills-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-chip {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.2s;
+}
+
+.skill-chip:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.skills-column.matched .skill-chip {
+    border-color: var(--success);
+    background: rgba(22, 163, 74, 0.1);
+}
+
+.skills-column.matched .skill-chip:hover {
+    background: var(--success);
+}
+
+.skills-column.missing .skill-chip {
+    border-color: var(--warning);
+    background: rgba(234, 88, 12, 0.1);
+}
+
+.skills-column.missing .skill-chip:hover {
+    background: var(--warning);
+}
+
+/* ========================================================================
+   ALL SKILLS SECTION
+   ======================================================================== */
+.all-skills-section {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.all-skills-section h3 {
+    margin-bottom: 1rem;
+}
+
+/* ========================================================================
+   HIGHLIGHTS SECTION
+   ======================================================================== */
+.highlights-section {
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.05), rgba(34, 197, 94, 0.05));
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(22, 163, 74, 0.2);
+    margin-bottom: 2rem;
+}
+
+.highlights-section h3 {
+    margin-bottom: 1rem;
+    color: var(--success);
+}
+
+.highlights-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.highlight-item {
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--success);
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* ========================================================================
+   SCORING BREAKDOWN
+   ======================================================================== */
+.scoring-breakdown {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.scoring-breakdown h3 {
+    margin-bottom: 1.5rem;
+}
+
+.score-bars {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.score-bar {
+    display: grid;
+    grid-template-columns: 150px 1fr 60px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score-bar label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.bar {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--info));
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.score-bar span:last-child {
+    font-weight: bold;
+    color: var(--primary);
+    text-align: right;
+}
+
+/* ========================================================================
+   STATUS SECTION
+   ======================================================================== */
+.status-section {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.status-section h3 {
+    margin-bottom: 1rem;
+}
+
+.status-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.status-btn {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--border);
+    background: white;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.status-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.status-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.status-message {
+    color: var(--success);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    max-width: 1400px;
+    margin: 2rem auto 0;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN
+   ======================================================================== */
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .skills-section {
+        grid-template-columns: 1fr;
+    }
+
+    .header-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .candidate-detail-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .score-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .score-bar span:last-child {
+        text-align: left;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .btn-voice {
+        min-width: 100%;
+    }
+
+    .highlights-list {
+        grid-template-columns: 1fr;
+    }
+}
